@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Chap5-Dyma</string>
+    <string name="main_activity_center_text">Hello, World !</string>
 </resources>

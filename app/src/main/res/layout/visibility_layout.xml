@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/ll_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_1_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text 1"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:visibility="visible"/>
+
+            <ImageButton
+                android:id="@+id/btn_1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orange"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_disabled_visible_24"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_2_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text 2"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:visibility="visible"/>
+
+            <ImageButton
+                android:id="@+id/btn_2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orange"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_disabled_visible_24"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_3_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text 3"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:visibility="visible"/>
+
+            <ImageButton
+                android:id="@+id/btn_3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orange"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_disabled_visible_24"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_4_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text 4"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:layout_margin="5dp"
+                android:visibility="visible"/>
+
+            <ImageButton
+                android:id="@+id/btn_4"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/orange"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_disabled_visible_24"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

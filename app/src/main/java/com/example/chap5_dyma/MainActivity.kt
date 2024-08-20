@@ -1,35 +1,47 @@
 package com.example.chap5_dyma
 
-import android.graphics.Typeface
+import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.StyleSpan
+import android.widget.ProgressBar
+import android.widget.SeekBar
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var text: TextView
+    lateinit var progressBar: ProgressBar
+
+    lateinit var seekBar: SeekBar
+    lateinit var seekBarValue: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
 
-        text = findViewById(R.id.text)
+        progressBar = findViewById(R.id.progress_bar)
+        seekBar = findViewById(R.id.seek_bar)
+        seekBarValue = findViewById(R.id.seek_bar_value_tv)
 
-        val spannable = SpannableString("Bold and Italic Text")
+        progressBar.progress = 1
 
-        spannable.setSpan(StyleSpan(Typeface.BOLD), 0, 4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        ObjectAnimator.ofInt(progressBar, "progress", 1, 100)
+            .setDuration(50000)
+            .start()
 
-        spannable.setSpan(StyleSpan(Typeface.ITALIC), 9, 15, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                this@MainActivity.seekBarValue.text = p1.toString()
+            }
 
-        text.text = spannable
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
 
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+            }
 
+        })
 
     }
 }

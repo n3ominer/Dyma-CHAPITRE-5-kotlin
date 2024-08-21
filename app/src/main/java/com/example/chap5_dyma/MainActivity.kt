@@ -1,10 +1,9 @@
 package com.example.chap5_dyma
 
-import android.animation.ObjectAnimator
+import android.graphics.Bitmap
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.SeekBar
@@ -12,6 +11,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.BitmapImageViewTarget
+import com.bumptech.glide.request.transition.Transition
+import kotlin.random.Random
+import kotlin.random.nextInt
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,11 +43,25 @@ class MainActivity : AppCompatActivity() {
     lateinit var btn3: ImageButton
     lateinit var btn4: ImageButton
 
+    lateinit var image: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+
+        this.image = findViewById(R.id.image)
+
+        Glide.with(this)
+            .load("https://robohash.org/${Random.nextInt(0..100)}")
+            .placeholder(R.drawable.android)
+            .timeout(3000)
+            .into(this.image)
+
+        this.image.setOnClickListener {
+            Toast.makeText(this, "Image clicked !", Toast.LENGTH_LONG).show()
+        }
 
         this.progressBarsSetup()
         this.cardViewSetUp()
